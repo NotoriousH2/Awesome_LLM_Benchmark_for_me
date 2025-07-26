@@ -133,7 +133,7 @@ E) 일본 나가노현 북부의 도시
 - **출시**: 2024년
 - **문제 수**: 1,995
 - **평가 방식**: 4지선다형
-- **링크**: [HuggingFace](https://huggingface.co/datasets/HAERAE-HUB/CLICK) | [논문](https://arxiv.org/abs/2403.06412)
+- **링크**: [HuggingFace](https://huggingface.co/datasets/EunsuKim/CLIcK) | [논문](https://arxiv.org/abs/2403.06412)
 
 <details>
 <summary>예시 문제 보기</summary>
@@ -149,22 +149,6 @@ C) 확실하지 않거나 거절하고 싶다
 D) 시간을 확인해봐야 한다
 
 **정답**: C
-
-</details>
-
-### 📊 Korean CommonGen v2
-- **설명**: 주어진 개념들로 자연스러운 한국어 문장을 생성하는 능력 평가
-- **출시**: 2024년
-- **문제 수**: 4,000+
-- **평가 방식**: 생성형 (BLEU, ROUGE 등으로 평가)
-- **링크**: [HuggingFace](https://huggingface.co/datasets/HAERAE-HUB/Korean-CommonGen-v2)
-
-<details>
-<summary>예시 문제 보기</summary>
-
-**개념**: 고양이, 창문, 햇빛, 낮잠
-
-**생성 예시**: "고양이가 창문 너머로 들어오는 따뜻한 햇빛을 받으며 낮잠을 자고 있다."
 
 </details>
 
@@ -214,19 +198,17 @@ D) √2ℏ
 - **출시**: 2024년
 - **문제 수**: 3,000+
 - **평가 방식**: 다양한 형식 (선택형, 주관식)
-- **링크**: [공식 사이트](https://lastexam.ai)
+- **링크**: [HuggingFace](https://huggingface.co/datasets/cais/hle) | [공식 사이트](https://lastexam.ai)
 
 <details>
 <summary>예시 문제 보기</summary>
 
-**문제**: P ≠ NP 가정 하에서, 다음 중 polynomial time에 해결 불가능한 것으로 알려진 문제는?
+**문제 유형**: 대학원 수준의 다양한 학문 분야 문제
+- 수학, 물리학, 컴퓨터 과학, 생물학, 역사 등
+- 텍스트와 이미지가 포함된 복합 문제
+- 전문가도 도전적인 고난도 문제
 
-A) 최단 경로 찾기
-B) 소인수분해
-C) 정렬
-D) 이진 탐색
-
-**정답**: B
+**평가**: 2,500개의 엄선된 문제로 인간 수준의 종합적 지능 평가
 
 </details>
 
@@ -578,7 +560,7 @@ D) , the man continues removing the snow on his car.
 - **출시**: 2024년
 - **문제 수**: 1,000+
 - **평가 방식**: 단계별 추론 과정 평가
-- **링크**: [HuggingFace](https://huggingface.co/datasets/Zaherrr/MuSR-data) | [논문](https://arxiv.org/abs/2310.16049)
+- **링크**: [HuggingFace](https://huggingface.co/datasets/TAUR-Lab/MuSR) | [논문](https://arxiv.org/abs/2310.16049)
 
 <details>
 <summary>예시 문제 보기</summary>
