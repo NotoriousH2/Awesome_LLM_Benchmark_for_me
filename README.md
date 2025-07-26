@@ -14,6 +14,7 @@
 - [🧠 추론 & 수학](#-추론--수학)
 - [💻 코딩](#-코딩)
 - [📚 일반 지식](#-일반-지식)
+- [🤖 Agent 벤치마크](#-agent-벤치마크)
 - [🎯 특수 목적](#-특수-목적)
 - [🤝 기여 방법](#-기여-방법)
 
@@ -475,6 +476,89 @@ C) , the man puts on a christmas coat, knitted with netting.
 D) , the man continues removing the snow on his car.
 
 **정답**: D
+
+</details>
+
+---
+
+## 🤖 Agent 벤치마크
+
+### 📊 τ-bench (Tau-bench)
+- **설명**: 사용자와 AI 에이전트 간의 동적 대화를 평가하는 벤치마크
+- **출시**: 2024년
+- **문제 수**: 도메인별 다양
+- **평가 방식**: API 도구 사용 및 정책 준수 평가
+- **링크**: [GitHub](https://github.com/sierra-research/tau-bench) | [논문](https://arxiv.org/abs/2406.12045)
+
+<details>
+<summary>예시 문제 보기</summary>
+
+**특징**: 실제 환경에서의 에이전트 행동 평가
+- 여행 예약, 쇼핑, 고객 지원 등 실제 시나리오
+- 도메인별 API 도구와 정책 가이드라인 제공
+- 대화 종료 후 데이터베이스 상태를 목표 상태와 비교
+
+**성능**: 최고 성능 모델(GPT-4o)도 50% 미만의 성공률
+
+</details>
+
+### 📊 τ²-bench (Tau-2-bench)
+- **설명**: 사용자와 에이전트가 모두 도구를 사용하는 이중 제어 환경 평가
+- **출시**: 2025년
+- **문제 수**: 통신 도메인 중심
+- **평가 방식**: 추론과 조정/커뮤니케이션 능력 평가
+- **링크**: [논문](https://arxiv.org/abs/2506.07982)
+
+<details>
+<summary>예시 문제 보기</summary>
+
+**특징**: 기술 지원 상황처럼 사용자와 협업
+- 통신 도메인에서 Dec-POMDP로 모델링
+- 에이전트와 사용자 모두 도구를 사용하여 공유 환경에서 작업
+- 구성적 작업 생성기로 다양한 복잡도의 검증 가능한 작업 생성
+
+**성과**: 단일 제어에서 이중 제어로 전환 시 성능 하락
+
+</details>
+
+---
+
+## 📚 일반 지식
+
+### 📊 IFEval (Instruction Following Evaluation)
+- **설명**: 복잡한 지시사항을 정확히 따르는 능력 평가
+- **출시**: 2024년
+- **문제 수**: 500+
+- **평가 방식**: 제약 조건 준수 확인
+- **링크**: [HuggingFace](https://huggingface.co/datasets/google/IFEval) | [논문](https://arxiv.org/abs/2311.07911)
+
+<details>
+<summary>예시 문제 보기</summary>
+
+**문제**: Write a 300+ word summary of the wikipedia page "https://en.wikipedia.org/wiki/Raymond_III,_Count_of_Tripoli". Do not use any commas and highlight at least 3 sections that has titles in markdown format, for example *highlighted section part 1*, *highlighted section part 2*, *highlighted section part 3*.
+
+**평가 항목**:
+- 쉼표 사용 금지 (punctuation:no_comma)
+- 3개 이상의 섹션 하이라이트 (detectable_format:number_highlighted_sections)
+- 300단어 이상 (length_constraints:number_words)
+
+</details>
+
+### 📊 SimpleQA
+- **설명**: 단순 사실 기반 질문에 대한 정확성 평가
+- **출시**: 2024년
+- **문제 수**: 4,326
+- **평가 방식**: 단답형 사실 확인
+- **링크**: [HuggingFace](https://huggingface.co/datasets/basicv8vc/SimpleQA) | [논문](https://arxiv.org/abs/2411.04368)
+
+<details>
+<summary>예시 문제 보기</summary>
+
+**문제**: Who received the IEEE Frank Rosenblatt Award in 2010?
+
+**정답**: Michio Sugeno
+
+**참고**: 단순하고 명확한 사실 기반 질문으로, 다양한 분야(과학, 기술, 엔터테인먼트 등) 포함
 
 </details>
 
