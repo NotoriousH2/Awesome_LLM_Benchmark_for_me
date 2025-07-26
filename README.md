@@ -68,17 +68,20 @@ D) ￦1,050,000
 - **출시**: 2024년
 - **문제 수**: 12,000+
 - **평가 방식**: 다지선다형 (문제별 상이)
-- **링크**: [HuggingFace](https://huggingface.co/datasets/bzantium/KMMLU-Pro) | [논문](https://arxiv.org/abs/2507.08924)
+- **링크**: [HuggingFace](https://huggingface.co/datasets/LGAI-EXAONE/KMMLU-Pro) | [논문](https://arxiv.org/abs/2507.08924)
 
 <details>
 <summary>예시 문제 보기</summary>
 
-**특징**: MMLU-Pro의 고난도 문제들을 한국 맥락으로 재구성
-- 미국 법률 문제 → 전세 계약 관련 한국 법률 문제
-- 물리 문제 → KTX 고속열차 관련 문제
-- 비즈니스 문제 → 한국 재벌 기업 경쟁 구조 문제
+**문제**: 민법의 법원(法源)에 관한 설명으로 옳지 않은 것은? (다툼이 있으면 판례에 따름)
 
-**평가**: 단순 번역이 아닌 한국 특유의 문화적, 제도적 맥락 이해 필요
+A) 민사에 관한 헌법재판소의 결정은 민법의 법원이 될 수 있다.
+B) 사적자치가 인정되는 분야의 제정법이 주로 임의규정인 경우, 사실인 관습은 법률행위 해석기준이 될 수 있다.
+C) 법원(法院)은 판례변경을 통해 기존 판습법의 효력을 부정할 수 있다.
+D) 관습법은 사회 구성원의 법적 확신으로 성립된 것이므로 제정법과 배치되는 경우에는 관습법이 우선한다.
+E) 법원(法院)은 관습법에 관한 당사자의 주장이 없더라도 직권으로 그 존재를 확정할 수 있다.
+
+**정답**: D
 
 </details>
 
@@ -215,53 +218,14 @@ D) √2ℏ
 - **출시**: 2024년
 - **문제 수**: 500
 - **평가 방식**: 서술형 (LaTeX 수식 답안)
-- **링크**: [HuggingFace](https://huggingface.co/datasets/hendrycks/math) | [논문](https://arxiv.org/abs/2103.03874)
+- **링크**: [HuggingFace](https://huggingface.co/datasets/HuggingFaceH4/MATH-500) | [논문](https://arxiv.org/abs/2103.03874)
 
 <details>
 <summary>예시 문제 보기</summary>
 
-**문제**: $\sum_{k=1}^{100} \lfloor \sqrt{k} \rfloor$ 의 값을 구하시오.
+**문제**: Convert the point $(0,3)$ in rectangular coordinates to polar coordinates.  Enter your answer in the form $(r,\theta),$ where $r > 0$ and $0 \le \theta < 2 \pi.$
 
-**정답**: 1050
-
-</details>
-
-### 📊 EpochAI Frontier Math
-- **설명**: 현대 수학의 최전선 문제들을 다루는 초고난도 벤치마크
-- **출시**: 2024년
-- **문제 수**: 100+
-- **평가 방식**: 증명 및 계산
-- **링크**: [공식 발표](https://epochai.org/frontiermath)
-
-<details>
-<summary>예시 문제 보기</summary>
-
-**문제**: 모든 소수 p에 대해 $x^p + y^p = z^p$ 이 자명하지 않은 정수해를 갖지 않음을 보이시오.
-
-**참고**: 페르마의 마지막 정리 증명 요구
-
-</details>
-
-### 📊 ARC-AGI-2 (Abstraction and Reasoning Corpus)
-- **설명**: 추상적 추론과 패턴 인식 능력을 평가하는 시각적 퍼즐
-- **출시**: 2024년
-- **문제 수**: 800+
-- **평가 방식**: 그리드 패턴 완성
-- **링크**: [HuggingFace](https://huggingface.co/datasets/fchollet/ARC-AGI) | [GitHub](https://github.com/fchollet/ARC-AGI)
-
-<details>
-<summary>예시 문제 보기</summary>
-
-**문제**: 3x3 그리드에서 패턴을 파악하여 빈 칸을 채우시오
-
-입력:
-```
-[1,0,1]
-[0,1,0]
-[1,?,1]
-```
-
-**정답**: ? = 0 (대각선 패턴)
+**정답**: $\left( 3, \frac{\pi}{2} \right)$
 
 </details>
 
@@ -279,13 +243,40 @@ D) √2ℏ
 <details>
 <summary>예시 문제 보기</summary>
 
-**프로젝트**: Django
-**이슈**: "DateTimeField auto_now_add가 timezone-aware datetime을 생성하지 않음"
+**repo**: astropy/astropy
+**instance_id**: astropy__astropy-12907
+**problem_statement**: Modeling's `separability_matrix` does not compute separability correctly for nested CompoundModels
 
-**해결 요구사항**:
-- timezone-aware datetime 객체 생성하도록 수정
-- 기존 테스트 통과 유지
-- 새로운 테스트 케이스 추가
+Consider the following model:
+
+```python
+from astropy.modeling import models as m
+from astropy.modeling.separable import separability_matrix
+
+cm = m.Linear1D(10) & m.Linear1D(5)
+```
+
+It's separability matrix as you might expect is a diagonal:
+
+```python
+>>> separability_matrix(cm)
+array([[ True, False],
+       [False,  True]])
+```
+
+**patch**: 
+```diff
+--- a/astropy/modeling/separable.py
++++ b/astropy/modeling/separable.py
+@@ -242,7 +242,7 @@ def _cstack(left, right):
+         cright = _coord_matrix(right, 'right', noutp)
+     else:
+         cright = np.zeros((noutp, right.shape[1]))
+-        cright[-right.shape[0]:, -right.shape[1]:] = 1
++        cright[-right.shape[0]:, -right.shape[1]:] = right
+ 
+     return np.hstack([cleft, cright])
+```
 
 </details>
 
@@ -348,20 +339,18 @@ def longest_palindrome(s: str) -> str:
 <details>
 <summary>예시 문제 보기</summary>
 
-**문제**: 주어진 숫자가 해피 넘버인지 판단하는 함수를 작성하시오.
+**문제**: 
+from typing import List
 
-```python
-def is_happy_number(n: int) -> bool:
-    """
-    해피 넘버: 각 자릿수의 제곱의 합을 반복적으로 계산했을 때 1이 되는 수
-    
-    >>> is_happy_number(19)
-    True
-    >>> is_happy_number(2)
+
+def has_close_elements(numbers: List[float], threshold: float) -> bool:
+    """ Check if in given list of numbers, are any two numbers closer to each other than
+    given threshold.
+    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)
     False
+    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)
+    True
     """
-    pass
-```
 
 </details>
 
@@ -409,22 +398,19 @@ def merge_sorted_lists(list1, list2):
 <details>
 <summary>예시 문제 보기</summary>
 
-**주제**: 경제학
+**문제**: Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.
 
-**문제**: 중앙은행이 통화공급을 늘릴 때 단기적으로 나타날 수 있는 현상으로 가장 적절한 것은?
+A) Safe practices, Fear, Jealousy, Trivial
+B) Unsafe practices, Distress, Joy, Trivial
+C) Safe practices, Wants, Jealousy, Trivial
+D) Safe practices, Distress, Fear, Trivial
+E) Unsafe practices, Wants, Jealousy, Serious
+F) Safe practices, Distress, Jealousy, Serious
+G) Safe practices, Wants, Fear, Serious
+H) Unsafe practices, Wants, Fear, Trivial
+I) Unsafe practices, Distress, Fear, Serious
 
-A) 실업률 감소와 인플레이션 상승
-B) 실업률 증가와 인플레이션 하락
-C) 실업률과 인플레이션 모두 감소
-D) 실업률과 인플레이션 모두 증가
-E) 환율 상승과 수출 증가
-F) 환율 하락과 수입 감소
-G) 재정적자 감소
-H) 재정흑자 증가
-I) 경상수지 개선
-J) 변화 없음
-
-**정답**: A
+**정답**: I
 
 </details>
 
