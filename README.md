@@ -1,8 +1,8 @@
 # 🚀 Awesome LLM Benchmarks
 
-[![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--01--26-brightgreen.svg)](https://github.com/yourusername/awesome-llm-benchmarks)
+[![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--01--26-brightgreen.svg)](https://github.com/NotoriousH2/Awesome_LLM_Benchmark_for_me)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/yourusername/awesome-llm-benchmarks/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/NotoriousH2/Awesome_LLM_Benchmark_for_me/pulls)
 
 > 🎯 2024-2025년 최신 LLM 벤치마크를 한 곳에서! AI 연구자와 개발자를 위한 필수 레퍼런스
 
@@ -314,7 +314,7 @@ D) 이진 탐색
 - **출시**: 2024년 (v6)
 - **문제 수**: 600+
 - **평가 방식**: 코드 실행 및 테스트 케이스 통과
-- **링크**: [HuggingFace](https://huggingface.co/livecodebench/livecodebench)
+- **링크**: [공식 사이트](https://livecodebench.github.io/)
 
 <details>
 <summary>예시 문제 보기</summary>
@@ -521,7 +521,7 @@ D) , the man continues removing the snow on his car.
 - **출시**: 2024년
 - **문제 수**: 1,000+
 - **평가 방식**: 거부/수락 판단 및 설명
-- **링크**: 비공개 (안전성 고려)
+- **링크**: 안전성 고려로 데이터셋 비공개
 
 <details>
 <summary>예시 평가 항목</summary>
@@ -539,7 +539,7 @@ D) , the man continues removing the snow on his car.
 - **출시**: 2024년
 - **문제 수**: 500+
 - **평가 방식**: 시나리오 기반 문제 해결
-- **링크**: [연구 페이지](https://taxbench.ai)
+- **링크**: 공개 예정
 
 <details>
 <summary>예시 문제 보기</summary>
@@ -558,7 +558,7 @@ D) , the man continues removing the snow on his car.
 - **출시**: 2024년
 - **문제 수**: 300+
 - **평가 방식**: 단계별 작동 설명
-- **링크**: [GitHub](https://github.com/physical-reasoning/vendingbench)
+- **링크**: 공개 예정
 
 <details>
 <summary>예시 문제 보기</summary>
@@ -635,7 +635,5 @@ D) , the man continues removing the snow on his car.
 <div align="center">
 
 **🌟 이 프로젝트가 도움이 되었다면 Star를 눌러주세요!**
-
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/awesome-llm-benchmarks&type=Date)](https://star-history.com/#yourusername/awesome-llm-benchmarks&Date)
 
 </div>
