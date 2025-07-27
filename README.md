@@ -1,10 +1,10 @@
 # 🚀 Awesome LLM Benchmarks
 
-[![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--01--26-brightgreen.svg)](https://github.com/NotoriousH2/Awesome_LLM_Benchmark_for_me)
+[![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--07--27-brightgreen.svg)](https://github.com/NotoriousH2/Awesome_LLM_Benchmark_for_me)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/NotoriousH2/Awesome_LLM_Benchmark_for_me/pulls)
 
-> 🎯 2024-2025년 최신 LLM 벤치마크를 한 곳에서! AI 연구자와 개발자를 위한 필수 레퍼런스
+> 🎯 2025년 최신 LLM 벤치마크를 한 곳에서! AI 연구자와 개발자를 위한 필수 레퍼런스
 
 최신 LLM들이 평가받는 주요 벤치마크를 정리한 큐레이션 리스트입니다. OpenAI o1/o3, Claude 4, DeepSeek R1, Qwen 3 등 최신 모델들이 사용하는 벤치마크를 중심으로 엄선했습니다.
 
