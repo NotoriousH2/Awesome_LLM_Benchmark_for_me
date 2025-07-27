@@ -24,3 +24,17 @@ Thumbs.db
 *.log
 .cache/
 temp/
+
+# 내부용 파일들
+specification.md
+README_for_Claude.md
+README_MCP.md
+add_format.md
+bench_list.md
+
+# 테스트 및 개발 파일들
+hf_dataset_server.py
+test_hf_dataset_client.py
+
+# 환경 설정
+.env
