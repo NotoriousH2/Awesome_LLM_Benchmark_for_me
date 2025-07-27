@@ -230,6 +230,53 @@ D) √2ℏ
 
 </details>
 
+### 📊 OpenThoughts (Open Synthetic Reasoning Dataset)
+- **설명**: 수학, 과학, 코드, 퍼즐을 포함한 고품질 합성 추론 데이터셋
+- **출시**: 2024-2025년
+- **문제 수**: 1,200,000+ (OpenThoughts3-1.2M)
+- **평가 방식**: 추론 과정과 답안 생성
+- **링크**: [HuggingFace](https://huggingface.co/datasets/open-thoughts/OpenThoughts3-1.2M) | [GitHub](https://github.com/open-thoughts/open-thoughts)
+
+<details>
+<summary>예시 문제 보기</summary>
+
+**과제**: 코딩 문제 (난이도: 7/10)
+
+**문제**: Chef와 그의 직원들이 양방향 송수신기로 연락을 유지하려고 합니다. 송수신기는 제한된 범위를 가지고 있어 너무 멀리 떨어져 있으면 직접 통신할 수 없습니다.
+
+주어진 조건에서 Chef, head server, sous-chef가 모두 연락을 유지할 수 있는지 판단하는 Python 함수를 작성하세요.
+
+**특징**: 
+- 체계적인 사고 과정(Thought)과 해결책(Solution)으로 구성
+- 분석, 요약, 탐색, 재평가, 반성, 역추적, 반복의 포괄적인 사이클을 통한 추론
+
+</details>
+
+### 📊 GSM8K (Grade School Math 8K)
+- **설명**: 초등학교 수준의 수학 문장제 문제로 다단계 추론 능력 평가
+- **출시**: 2021년
+- **문제 수**: 8,500 (학습 7,500 + 테스트 1,000)
+- **평가 방식**: 자연어 풀이 과정과 최종 답안
+- **링크**: [HuggingFace](https://huggingface.co/datasets/openai/gsm8k) | [GitHub](https://github.com/openai/grade-school-math) | [논문](https://arxiv.org/abs/2110.14168)
+
+<details>
+<summary>예시 문제 보기</summary>
+
+**문제**: Natalia는 4월에 친구 48명에게 클립을 팔았고, 5월에는 그 절반만큼 팔았습니다. Natalia가 4월과 5월에 총 몇 개의 클립을 팔았을까요?
+
+**풀이 과정**:
+- 5월에 판매한 클립: 48/2 = 24개
+- 4월과 5월 총 판매량: 48 + 24 = 72개
+
+**정답**: 72
+
+**특징**:
+- 2-8단계의 풀이 과정 필요
+- 기본 산술 연산(+, -, ×, ÷)만 사용
+- 중학생 수준에서 해결 가능한 난이도
+
+</details>
+
 ---
 
 ## 💻 코딩
