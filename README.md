@@ -670,24 +670,28 @@ D) , the man continues removing the snow on his car.
 
 </details>
 
-### 📊 MuSR (Multi-Step Soft Reasoning)
-- **설명**: 여러 단계의 추론이 필요한 복잡한 문제 해결 능력 평가
-- **출시**: 2024년
-- **문제 수**: 1,000+
-- **평가 방식**: 단계별 추론 과정 평가
-- **링크**: [HuggingFace](https://huggingface.co/datasets/TAUR-Lab/MuSR) | [논문](https://arxiv.org/abs/2310.16049)
+### 📊 MuSR (Multistep Soft Reasoning)
+- **설명**: 자연어 서술 기반의 다단계 소프트 추론 능력 평가
+- **출시**: 2024년 (ICLR 2024 Spotlight)
+- **문제 수**: 756 (살인 미스터리 250 + 물체 배치 256 + 팀 할당 250)
+- **평가 방식**: 긴 서술문 이해 후 다단계 추론
+- **링크**: [HuggingFace](https://huggingface.co/datasets/TAUR-Lab/MuSR) | [논문](https://arxiv.org/abs/2310.16049) | [데모](https://zayne-sprague.github.io/MuSR/)
 
 <details>
 <summary>예시 문제 보기</summary>
 
-**문제**: 알리스는 밥보다 2살 많고, 찰리는 알리스보다 3살 어립니다. 3년 후 세 사람의 나이 합이 50살이라면, 현재 밥의 나이는?
+**도메인**: 살인 미스터리 (약 1,000단어 길이)
 
-**풀이 과정**:
-1. 변수 설정: 밥 = x, 알리스 = x+2, 찰리 = x-1
-2. 3년 후: (x+3) + (x+5) + (x+2) = 50
-3. 계산: 3x + 10 = 50, x = 13.33...
+**서술문 요약**: 번지점프장에서 Mack이 쌍절곤으로 살해당한 사건. 용의자는 Mackenzie와 Ana. Winston 형사가 각 용의자를 조사하며 단서를 수집.
 
-**정답**: 문제에 오류가 있음 (정수가 아님)
+**질문**: 누가 가장 유력한 살인자인가?
+
+**선택지**: ['Mackenzie', 'Ana']
+
+**특징**:
+- GPT-4도 어려워하는 복잡한 추론 문제
+- Chain-of-Thought 추론이 필수적
+- 뉴로심볼릭 합성-자연어 변환 알고리즘으로 생성
 
 </details>
 
